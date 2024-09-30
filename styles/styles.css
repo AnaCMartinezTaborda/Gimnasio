@@ -1,0 +1,63 @@
+:root{
+    --blanco: #ffffff;
+    --oscuro: #000000;
+    --gris: #757575;
+    --purpuraOscuro: #2C1B47;
+    --purpuraMedio: #724C9D;
+    --purpuraClaro: #DCCAE9;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    display: flex;
+    font-size: 16px;
+    font-family: "Krub", sans-serif;
+    background-color: var(--purpuraOscuro);
+    background: linear-gradient(to right, #724C9D, #2C1B47);
+    /* height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+    /* background-color: var(--purpuraOscuro); */
+}
+section{
+    background-color: var(--purpuraMedio);
+    text-align: center;
+    margin: 15rem 55rem;
+    border-radius: 2rem;
+    box-shadow: .5rem .5rem .5rem 1rem rgba(73, 41, 124, 0.3);
+}
+section h2{
+    color: var(--purpuraClaro);
+    font-size: 3.5rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2.5rem;
+}
+.labels{
+    display: flex;
+    padding: 1rem 0 1rem 0;
+    color: var(--purpuraClaro);
+}
+.inputs{
+    padding: 1rem;
+    border-radius: 1.5rem;
+    outline: none;
+}
+.boton{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 12rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    background-color: var(--purpuraClaro);
+    border: none;
+}
+.boton:hover{
+    background-color: var(--purpuraOscuro);
+    color: var(--purpuraClaro);
+}
