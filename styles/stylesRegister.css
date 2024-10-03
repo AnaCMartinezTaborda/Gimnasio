@@ -7,14 +7,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e9f4f5;
+    background-color: #f0f8ff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Contenedor de login */
+/* Contenedor de registro */
 .login-container {
     background-color: #fff;
     padding: 30px;
@@ -50,7 +50,7 @@ input[type="text"], input[type="password"] {
 
 button {
     padding: 12px 15px;
-    background-color: #00796b;
+    background-color: #ff5722;
     color: white;
     border: none;
     border-radius: 5px;
@@ -61,16 +61,16 @@ button {
 }
 
 button:hover {
-    background-color: #004d40;
+    background-color: #e64a19;
 }
 
-/* Enlace para el registro */
+/* Enlace para iniciar sesión */
 p {
     margin-top: 20px;
 }
 
 a {
-    color: #00796b;
+    color: #ff5722;
     text-decoration: none;
     font-weight: bold;
 }
