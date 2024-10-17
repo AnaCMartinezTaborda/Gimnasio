@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos para el registro de plan */
 * {
     margin: 0;
     padding: 0;
@@ -7,74 +7,55 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e9f4f5;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Contenedor de login */
-.login-container {
+.form-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    width: 400px;
     text-align: center;
 }
 
 h2 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #333;
     font-size: 24px;
-    font-weight: 600;
 }
 
-/* Estilos para los labels e inputs */
-label {
+form label {
     display: block;
     text-align: left;
     margin-bottom: 8px;
     color: #666;
 }
 
-input[type="text"], input[type="password"] {
+input, select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
 }
 
 button {
-    padding: 12px 15px;
+    padding: 12px 20px;
     background-color: #00796b;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 20px;
     width: 100%;
-    font-weight: bold;
 }
 
 button:hover {
     background-color: #004d40;
-}
-
-/* Enlace para el registro */
-p {
-    margin-top: 20px;
-}
-
-a {
-    color: #00796b;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
 }
