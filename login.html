@@ -13,35 +13,20 @@
     <title>Registro</title>
   </head>
   <body>
-    <section class="singIn">
-      <h2>Iniciar Sesión</h2>
-      <form action="">
-        <label class="labels" for="">Nombre de Usuario</label>
-        <input
-          class="inputs"
-          type="text"
-          name="nombre_usuario"
-          id="nombre_usuario"
-        />
-        <label class="labels" for="">Contraseña</label>
-        <input class="inputs" type="password" name="password" id="password" />
-        <input type="submit" value="Iniciar Sesión" class="boton" />
-      </form>
-    </section>
-    <!-- <section class="singUp">
-      <h2>Registrar</h2>
-      <form action="">
-        <label class="labels" for="">Nombre de Usuario</label>
-        <input
-          class="inputs"
-          type="text"
-          name="nombre_usuario"
-          id="nombre_usuario"
-        />
-        <label class="labels" for="">Contraseña</label>
-        <input class="inputs" type="password" name="password" id="password" />
-        <input type="submit" value="Registrar" class="boton" />
-      </form>
-    </section> -->
-  </body>
+    <div class="login-container">
+        <h2>Login Administrador</h2>
+        <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
 </html>

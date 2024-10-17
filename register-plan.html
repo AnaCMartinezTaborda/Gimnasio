@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Plan</title>
+    <link rel="stylesheet" href="styles/stylesPlanRegister.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registrar Nuevo Plan</h2>
+        <form id="planForm">
+            <label for="plan-name">Nombre del Plan:</label>
+            <input type="text" id="plan-name" placeholder="Ej: Plan Básico" required>
+            
+            <label for="duration">Duración del Plan (en meses):</label>
+            <input type="number" id="duration" min="1" placeholder="Duración en meses" required>
+            
+            <button type="submit">Registrar Plan</button>
+        </form>        
+
+        <!-- Botón para volver al dashboard -->
+        <button onclick="window.location.href='dashboard.html'">Volver al Dashboard</button>
+    </div>
+    <div id="userList"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
