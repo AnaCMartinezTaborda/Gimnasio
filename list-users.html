@@ -16,6 +16,52 @@
     </div>
 
     <!-- JavaScript para manejar la visualización de clientes -->
-    <script src="app.js"></script>
+    <script>
+        // Supongamos que tenemos una lista de clientes en localStorage
+        const clients = JSON.parse(localStorage.getItem('clients')) || [];
+
+        // Función para mostrar la lista de clientes
+        function displayClients() {
+            const clientList = document.getElementById('clientList');
+            clientList.innerHTML = ''; // Limpiar el contenido antes de mostrar
+
+            clients.forEach((client, index) => {
+                const clientItem = document.createElement('div');
+                clientItem.classList.add('client-item');
+
+                clientItem.innerHTML = `
+                    <h3>${client.nombre} ${client.apellido}</h3>
+                    <p>Documento: ${client.documento}</p>
+                    <p>Teléfono: ${client.telefono}</p>
+                    <p>Sexo: ${client.sexo}</p>
+                    <p>Plan: ${client.plan}</p>
+                    <button onclick="editClient(${index})">Editar</button>
+                    <button onclick="suspendClient(${index})">Suspender</button>
+                `;
+
+                clientList.appendChild(clientItem);
+            });
+        }
+
+        // Función para editar un cliente
+        function editClient(index) {
+            // Redirigir a la vista de registro de cliente con los datos cargados
+            const client = clients[index];
+            localStorage.setItem('editClient', JSON.stringify({ ...client, index }));
+            window.location.href = 'register-client.html'; // Asumiendo que la vista de registro se llama así
+        }
+
+        // Función para suspender un cliente (puedes personalizar esto)
+        function suspendClient(index) {
+            if (confirm("¿Estás seguro de que deseas suspender a este cliente?")) {
+                clients.splice(index, 1); // Elimina el cliente de la lista
+                localStorage.setItem('clients', JSON.stringify(clients));
+                displayClients(); // Actualizar la lista en pantalla
+            }
+        }
+
+        // Mostrar la lista de clientes al cargar la página
+        window.onload = displayClients;
+    </script>
 </body>
 </html>
