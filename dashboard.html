@@ -7,20 +7,25 @@
     <link rel="stylesheet" href="styles/stylesAdmin.css">
 </head>
 <body>
+    <button id="logoutBtn" class="logout-button">Cerrar Sesión</button>
     <div class="dashboard-container">
         <h1>Panel de Administrador</h1>
         <p>Bienvenido al sistema de gestión del gimnasio</p>
 
         <div class="button-group">
-            <!-- Botón para registrar un cliente -->
             <button onclick="window.location.href='register-client.html'">Registrar Cliente</button>
-
-            <!-- Botón para ver la lista de usuarios -->
             <button onclick="window.location.href='list-users.html'">Listar Usuarios</button>
-
-            <!-- Botón para registrar un plan -->
             <button onclick="window.location.href='register-plan.html'">Registrar Plan</button>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Función para cerrar sesión
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            alert('Has cerrado sesión.');
+            window.location.href = 'login.html'; // Redirigir al login
+        });
+    </script>
 </body>
 </html>

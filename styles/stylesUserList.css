@@ -58,3 +58,51 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* Estilos de los botones Editar y Suspender dentro de cada cliente */
+.client-item button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Botón de Editar - Color verde */
+.client-item button:nth-child(5) {
+    background-color: #28a745;
+    color: white;
+}
+
+.client-item button:nth-child(5):hover {
+    background-color: #218838;
+}
+
+/* Botón de Suspender - Color rojo */
+.client-item button:nth-child(6) {
+    background-color: #dc3545;
+    color: white;
+}
+
+.client-item button:nth-child(6):hover {
+    background-color: #c82333;
+}
+
+/* Ajustes para el contenedor de la lista */
+#clientList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.client-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Cliente</title>
     <link rel="stylesheet" href="styles/stylesClienteRegister.css">
 </head>
+
 <body>
     <div class="form-container">
-        <h2>Registrar Cliente</h2>
+        <h2 id="formTitle">Registrar Cliente</h2> <!-- Título dinámico -->
         <form id="clientForm">
             <!-- Campos del cliente -->
             <label for="document">Documento:</label>
@@ -35,19 +37,120 @@
 
             <!-- Seleccionar el plan -->
             <label for="plan">Plan:</label>
-            <select id="plan" required>
-                <!-- Aquí se cargarán los planes desde LocalStorage -->
-            </select>
+            <select id="plan" required></select>
 
-            <!-- Botón para registrar el cliente -->
-            <button type="submit">Registrar Cliente</button>
+            <!-- Botón para registrar o actualizar el cliente -->
+            <button id="submitButton" type="submit">Registrar Cliente</button>
         </form>
 
         <!-- Botón para volver al dashboard -->
         <button onclick="window.location.href='dashboard.html'">Volver al Dashboard</button>
     </div>
 
-    <!-- JavaScript para manejar el registro de clientes -->
-    <script src="app.js"></script>
+    <!-- JavaScript para manejar el registro y actualización de clientes -->
+    <script>
+        let editClientIndex = null; // Para saber si estamos editando un cliente existente
+
+        // Función para cargar los planes guardados en LocalStorage
+        function loadPlans() {
+            const plans = JSON.parse(localStorage.getItem('plans')) || [];
+            const planSelect = document.getElementById('plan');
+            planSelect.innerHTML = '';
+
+            if (plans.length === 0) {
+                planSelect.innerHTML = '<option disabled>No hay planes disponibles</option>';
+            } else {
+                plans.forEach(plan => {
+                    const option = document.createElement('option');
+                    option.value = plan.name;
+                    option.textContent = plan.name;
+                    planSelect.appendChild(option);
+                });
+            }
+        }
+
+        // Función para cargar los datos del cliente a editar
+        function loadEditClient() {
+            const editClient = JSON.parse(localStorage.getItem('editClient'));
+            if (editClient) {
+                editClientIndex = editClient.index; // Guardamos el índice del cliente a editar
+
+                document.getElementById('document').value = editClient.document;
+                document.getElementById('first-name').value = editClient.nombre;
+                document.getElementById('last-name').value = editClient.apellido;
+                document.getElementById('phone').value = editClient.telefono;
+                document.getElementById('gender').value = editClient.sexo;
+                document.getElementById('email').value = editClient.email;
+                document.getElementById('plan').value = editClient.plan;
+
+                document.getElementById('formTitle').textContent = 'Actualizar Cliente'; // Cambiar el título
+                document.getElementById('submitButton').textContent = 'Actualizar Cliente'; // Cambiar el botón
+            }
+        }
+
+        // Función para registrar o actualizar clientes
+        document.getElementById('clientForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const documentId = document.getElementById('document').value;
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const phone = document.getElementById('phone').value;
+            const gender = document.getElementById('gender').value;
+            const email = document.getElementById('email').value;
+            const selectedPlan = document.getElementById('plan').value;
+
+            const plans = JSON.parse(localStorage.getItem('plans')) || [];
+            const selectedPlanData = plans.find(plan => plan.name === selectedPlan);
+            const duration = selectedPlanData ? parseInt(selectedPlanData.duration) : 0;
+
+            const startDate = new Date();
+            const endDate = new Date();
+            endDate.setMonth(startDate.getMonth() + duration);
+
+            const newClient = {
+                document: documentId,
+                nombre: firstName,
+                apellido: lastName,
+                telefono: phone,
+                sexo: gender,
+                email: email,
+                plan: selectedPlan,
+                startDate: startDate.toLocaleDateString(),
+                endDate: endDate.toLocaleDateString()
+            };
+
+            let clients = JSON.parse(localStorage.getItem('clients')) || [];
+
+            if (editClientIndex !== null) {
+                // Si estamos editando, actualizamos el cliente existente
+                clients[editClientIndex] = newClient;
+                alert('Cliente actualizado exitosamente');
+            } else {
+                // Si es un nuevo cliente, lo añadimos
+                clients.push(newClient);
+                alert('Cliente registrado exitosamente');
+            }
+
+            // Guardamos los clientes en LocalStorage
+            localStorage.setItem('clients', JSON.stringify(clients));
+
+            // Limpiamos el LocalStorage de editClient
+            localStorage.removeItem('editClient');
+
+            // Limpiar el formulario
+            document.getElementById('clientForm').reset();
+
+            // Redirigir al dashboard o mostrar la lista de clientes
+            window.location.href = 'dashboard.html';
+        });
+
+        // Cargar los planes y el cliente a editar (si existe) al cargar la página
+        window.onload = function () {
+            loadPlans();
+            loadEditClient(); // Ver si estamos editando un cliente
+        };
+    </script>
 </body>
+
 </html>
