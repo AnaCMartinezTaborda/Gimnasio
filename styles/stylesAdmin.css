@@ -1,35 +1,117 @@
-/* Estilos para el Dashboard */
+/* Paleta de colores */
+:root{
+    --blanco: #ffffff;
+    --oscuro: #000000;
+    --gris: #757575;
+    --purpuraOscuro: #2C1B47;
+    --purpuraMedio: #724C9D;
+    --purpuraClaro: #DCCAE9;
+    --contraste: #9356A0;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html{
+    font-size: 62.5%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    font-family: "Krub", sans-serif;
+    background-image: url(../img/Fondo-opaco2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Header */
+header{
+    background-color: var(--purpuraOscuro);
+    color: var(--purpuraClaro);
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+header h1{
+    color: var(--purpuraClaro);
+}
+
+header .welcome{
+    position: absolute;
+    top: 6.5rem;
+    left: 44%;
+}
+
+.welcome{
+    font-size: 1.5rem;
+}
+
+.span-user{
+    position: absolute;
+    top: 5.5rem;
+    right: 2rem;
+    font-size: 1.5rem;
+}
+
+header img{
+    position: absolute;
+    top: .5%;
+    left: 50%;
+    width: 8rem;
+    height: 10rem;
+}
+
+.users{
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    
+}
+
+.notify{
+    position: absolute;
+    top: 2rem;
+    right: 10rem;
 }
 
 .logout-button {
-    position: absolute; /* Posiciona el botón fuera del cuadro */
-    top: 20px; /* Distancia desde la parte superior */
-    right: 20px; /* Distancia desde la derecha */
-    padding: 8px 12px;
-    background-color: #d32f2f; /* Color de fondo del botón de cerrar sesión */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
 }
 
-.logout-button:hover {
-    background-color: #b71c1c; /* Color al pasar el mouse */
+/* Navigation */
+.body-main{
+    display: flex;
+    flex-direction: row;
 }
+.navigation{
+    padding: 3rem;
+    width: 30rem;
+    background-color: var(--purpuraOscuro);
+    height: 90.2vh;
+}
+.navigation a{
+    display: flex;
+    align-items: center;
+    background-color: var(--purpuraOscuro);
+    margin: 0 0 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--purpuraClaro);
+    cursor: pointer;
+}
+
+.navigation a:hover{
+    background-color: var(--purpuraMedio);
+}
+
 
 .dashboard-container {
     background-color: #fff;

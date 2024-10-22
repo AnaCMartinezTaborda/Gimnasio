@@ -27,7 +27,7 @@ document.getElementById('loginForm')?.addEventListener('submit', function(e) {
     // Validar el login
     if (username === storedUsername && password === storedPassword) {
         alert('¡Inicio de sesión exitoso!');
-        window.location.href = 'dashboard.html'; // Redirigir al panel de administrador
+        window.location.href = 'list-users.html'; // Redirigir al panel de administrador
     } else {
         alert('Usuario o contraseña incorrectos.');
     }

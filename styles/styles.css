@@ -1,13 +1,28 @@
+/* Paleta de colores */
+:root{
+    --blanco: #ffffff;
+    --oscuro: #000000;
+    --gris: #757575;
+    --purpuraOscuro: #2C1B47;
+    --purpuraMedio: #724C9D;
+    --purpuraClaro: #DCCAE9;
+    --contraste: #9356A0;
+}
+
 /* Estilos generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+    font-size: 62.5%;
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e9f4f5;
+    background-image: url(../img/login-purple.png);
+    background-size: cover;
+    background-position: center;
+    font-family: "Krub", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,18 +31,19 @@ body {
 
 /* Contenedor de login */
 .login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    background-color: var(--purpuraOscuro);
+    opacity: 0.9;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px 0 rgb(128, 101, 142);
+    width: 35rem;
     text-align: center;
 }
 
 h2 {
-    margin-bottom: 25px;
-    color: #333;
-    font-size: 24px;
+    margin-bottom: 2.5rem;
+    color: var(--purpuraClaro);
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -35,25 +51,27 @@ h2 {
 label {
     display: block;
     text-align: left;
-    margin-bottom: 8px;
-    color: #666;
+    margin-bottom: .8rem;
+    color: var(--purpuraClaro);
+    font-size: 1.5rem;
 }
 
 input[type="text"], input[type="password"] {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border: .2rem solid var(--purpuraClaro);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    outline: none;
 }
 
 button {
-    padding: 12px 15px;
-    background-color: #00796b;
-    color: white;
+    padding: 1.2rem 1.5rem;
+    background-color: var(--purpuraMedio);
+    color: var(--purpuraClaro);
     border: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
@@ -61,16 +79,18 @@ button {
 }
 
 button:hover {
-    background-color: #004d40;
+    background-color: var(--contraste);
 }
 
 /* Enlace para el registro */
 p {
-    margin-top: 20px;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: var(--blanco);
 }
 
 a {
-    color: #00796b;
+    color: var(--contraste);
     text-decoration: none;
     font-weight: bold;
 }
