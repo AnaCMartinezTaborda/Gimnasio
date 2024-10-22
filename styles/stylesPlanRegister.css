@@ -1,55 +1,145 @@
-/* Estilos para el registro de plan */
+/* Paleta de colores */
+:root{
+    --blanco: #ffffff;
+    --oscuro: #000000;
+    --gris: #757575;
+    --purpuraOscuro: #2C1B47;
+    --purpuraMedio: #724C9D;
+    --purpuraClaro: #DCCAE9;
+    --contraste: #9356A0;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+html{
+    font-size: 62.5%;
 }
 
+body {
+    position: relative;
+    font-family: "Krub", sans-serif;
+    background-image: url(../img/Fondo-opaco2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Header */
+header{
+    background-color: var(--purpuraOscuro);
+    color: var(--purpuraClaro);
+    padding: 2rem;
+}
+
+header h1{
+    color: var(--purpuraClaro);
+}
+
+.welcome{
+    font-size: 1.5rem;
+}
+
+.span-user{
+    position: absolute;
+    top: 5.5rem;
+    right: 2rem;
+    font-size: 1.5rem;
+}
+
+.users{
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    
+}
+
+.notify{
+    position: absolute;
+    top: 2rem;
+    right: 10rem;
+}
+
+.logout-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+/* Navigation */
+.body-main{
+    display: flex;
+    flex-direction: row;
+}
+.navigation{
+    padding: 3rem;
+    width: 30rem;
+    background-color: var(--purpuraOscuro);
+    height: 91.5vh;
+}
+.navigation a{
+    display: flex;
+    align-items: center;
+    background-color: var(--purpuraOscuro);
+    margin: 0 0 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--purpuraClaro);
+    cursor: pointer;
+}
+
+.navigation a:hover{
+    background-color: var(--purpuraMedio);
+}
+
+
+/* Form */
 .form-container {
-    background-color: #fff;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    background-color: var(--blanco);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 0 rgb(128, 101, 142);
     width: 400px;
     text-align: center;
 }
 
 h2 {
     margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
+    color: var(--oscuro);
+    font-size: 2.5rem;
 }
 
 form label {
+    font-size: 1.5rem;
     display: block;
     text-align: left;
     margin-bottom: 8px;
-    color: #666;
+    color: var(--oscuro);
 }
 
-input, select {
+input{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid var(--contraste);
+    border-radius: 1.5rem;
+    outline: none;
 }
 
 button {
     padding: 12px 20px;
-    background-color: #00796b;
+    background-color: var(--purpuraMedio);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 1.5rem;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
@@ -57,5 +147,5 @@ button {
 }
 
 button:hover {
-    background-color: #004d40;
+    background-color: var(--contraste);
 }
